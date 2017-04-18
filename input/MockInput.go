@@ -46,6 +46,8 @@ func (this *MockInput) OnAck(pack *engine.Packet) error {
 	return nil
 }
 
+func (this *MockInput) StopAcker(r engine.InputRunner) {}
+
 func (this *MockInput) CleanupForRestart() bool {
 	return true
 }
