@@ -23,6 +23,13 @@ func (this *MockOutput) Init(config *conf.Conf) {
 	this.metrics = config.Bool("metrics", true)
 }
 
+func (this *MockOutput) SampleConfig() string {
+	return `
+	blackhole: true
+	metrics: false
+	`
+}
+
 func (this *MockOutput) Run(r engine.OutputRunner, h engine.PluginHelper) error {
 	tick := time.NewTicker(time.Second * 10)
 	defer tick.Stop()

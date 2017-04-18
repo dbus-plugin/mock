@@ -42,6 +42,13 @@ func (this *MockInput) Init(config *conf.Conf) {
 	}
 }
 
+func (this *MockInput) SampleConfig() string {
+	return `
+	sleep: 1s
+	payload: "Bytes" // Bytes|RowsEvent
+	`
+}
+
 func (this *MockInput) OnAck(pack *engine.Packet) error {
 	return nil
 }

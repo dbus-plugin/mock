@@ -15,6 +15,10 @@ type MockFilter struct {
 func (this *MockFilter) Init(config *conf.Conf) {
 }
 
+func (this *MockFilter) SampleConfig() string {
+	return ``
+}
+
 func (this *MockFilter) Run(r engine.FilterRunner, h engine.PluginHelper) error {
 	for pack := range r.Exchange().InChan() {
 		pack.Recycle()
