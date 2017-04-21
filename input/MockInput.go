@@ -49,11 +49,11 @@ func (this *MockInput) SampleConfig() string {
 	`
 }
 
-func (this *MockInput) OnAck(pack *engine.Packet) error {
+func (this *MockInput) Ack(pack *engine.Packet) error {
 	return nil
 }
 
-func (this *MockInput) StopAcker(r engine.InputRunner) {}
+func (this *MockInput) End(r engine.InputRunner) {}
 
 func (this *MockInput) CleanupForRestart() bool {
 	return true
