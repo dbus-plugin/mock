@@ -82,7 +82,7 @@ func (this *MockInput) Run(r engine.InputRunner, h engine.PluginHelper) error {
 
 		case pack := <-this.inChan:
 			pack.Payload = this.payload
-			r.Exchange().Inject(pack)
+			r.Exchange().Emit(pack)
 			n++
 
 			if this.sleep > 0 {
