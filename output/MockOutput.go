@@ -40,7 +40,7 @@ func (this *MockOutput) Run(r engine.OutputRunner, h engine.PluginHelper) error 
 		select {
 		case pack, ok := <-r.Exchange().InChan():
 			if !ok {
-				log.Info("[%s] %d packets received", r.Name(), n)
+				log.Trace("[%s] %d packets received", r.Name(), n)
 				return nil
 			}
 
